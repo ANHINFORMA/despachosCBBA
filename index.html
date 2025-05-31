@@ -1,0 +1,1015 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Transportes</title>
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --secondary: #4caf50;
+            --light: #e8f5e9;
+            --dark: #1b5e20;
+            --accent: #81c784;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e9 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .update-time {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #e8f5e9;
+            font-style: italic;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        thead th {
+            background: var(--secondary);
+            color: white;
+            font-weight: 600;
+            padding: 15px 10px;
+            text-align: left;
+            position: sticky;
+            top: 0;
+        }
+        
+        tbody td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: var(--light);
+        }
+        
+        tbody tr:hover {
+            background-color: var(--accent) !important;
+            color: white;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+        
+        .search-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        #searchInput {
+            padding: 12px 20px;
+            width: 80%;
+            max-width: 500px;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        #searchInput:focus {
+            border-color: var(--secondary);
+            box-shadow: 0 2px 12px rgba(76, 175, 80, 0.3);
+        }
+        
+        .asc::after {
+            content: " ↑";
+        }
+        
+        .desc::after {
+            content: " ↓";
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>REPORTE DE DESPACHOS DE COMBUSTIBLE - COCHABAMBA</h1>
+            <div class="subtitle">Horarios de salida y llegada Aproximada (DOS=DIESEL, GES=GASOLINA)</div>
+            <div class="update-time">Reporte actualizado en 30/05/2025 23:51:20</div>
+        </header>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar...">
+        </div>
+        
+        <div class="table-container">
+            <table id="transportes-table">
+                <thead>
+                    <tr>
+                        <th>DESTINO</th>
+                        <th>LOCALIDAD</th>
+                        <th>PRODUCTO</th>
+                        <th>HORA SALIDA</th>
+                        <th>HORA LLEGADA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+    <tr>
+        <td>ESTACION DE SERVICIO RIOJA</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>14:06:09</td>
+        <td>14:11:27</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO BEIJING S.R.L.</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>14:06:09</td>
+        <td>14:38:00</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO SAN JUAN BAUTISTA S.R.L.</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>14:04:47</td>
+        <td>14:15:51</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACIÓN DE SERVICIO AEROPUERTO SRL.</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>14:03:33</td>
+        <td>14:27:31</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO SANTA MONICA S.R.L.</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>14:03:33</td>
+        <td>14:40:54</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO CHIMBOCO</td>
+        <td>SACABA</td>
+        <td>DOS</td>
+        <td>14:00:03</td>
+        <td>14:35:44</td>
+    </tr>
+    
+    <tr>
+        <td>ISABEL CHAVEZ</td>
+        <td>PUNATA</td>
+        <td>DOS</td>
+        <td>13:53:26</td>
+        <td>14:04:39</td>
+    </tr>
+    
+    <tr>
+        <td>EL MANANTIAL CENTRO DE SERVICIOS Y COMERCIO S.R.L.</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>13:53:26</td>
+        <td>14:11:53</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO LORETO S.R.L.- SUCURSAL COCHABAMBA I</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>13:53:26</td>
+        <td>14:07:51</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO TICTI S.R.L.</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>13:48:51</td>
+        <td>14:00:51</td>
+    </tr>
+    
+    <tr>
+        <td>SURTIDOR VILLA OBRAJES</td>
+        <td>SACABA</td>
+        <td>DOS</td>
+        <td>13:45:38</td>
+        <td>14:28:28</td>
+    </tr>
+    
+    <tr>
+        <td>CENTRO DE SERVICIO TIQUIPAYA</td>
+        <td>TIQUIPAYA</td>
+        <td>DOS</td>
+        <td>13:38:14</td>
+        <td>13:38:14</td>
+    </tr>
+    
+    <tr>
+        <td>DISEL S.R.L. SUCURSAL 1</td>
+        <td>QUILLACOLLO</td>
+        <td>GES</td>
+        <td>10:53:08</td>
+        <td>12:07:40</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO SUTICOLLO</td>
+        <td>SIPE SIPE</td>
+        <td>GES</td>
+        <td>10:46:23</td>
+        <td>12:04:57</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO RIOJA</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>10:43:29</td>
+        <td>10:48:47</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO TICTI S.R.L.</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>10:40:26</td>
+        <td>10:52:26</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO MAX MAMANGUEÑO</td>
+        <td>QUILLACOLLO</td>
+        <td>GES</td>
+        <td>10:36:07</td>
+        <td>11:27:03</td>
+    </tr>
+    
+    <tr>
+        <td>FORTALEZA ENERGY S.R.L.</td>
+        <td>TIQUIPAYA</td>
+        <td>GES</td>
+        <td>10:36:07</td>
+        <td>11:32:15</td>
+    </tr>
+    
+    <tr>
+        <td>FORTALEZA ENERGY S.R.L.</td>
+        <td>TIQUIPAYA</td>
+        <td>DOS</td>
+        <td>10:36:07</td>
+        <td>11:32:15</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO SAN JUAN BAUTISTA S.R.L.</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>10:32:49</td>
+        <td>10:43:53</td>
+    </tr>
+    
+    <tr>
+        <td>SURTIDOR VILLA OBRAJES</td>
+        <td>SACABA</td>
+        <td>GES</td>
+        <td>10:32:49</td>
+        <td>11:15:39</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO ANITA</td>
+        <td>SACABA</td>
+        <td>DOS</td>
+        <td>10:24:38</td>
+        <td>10:51:16</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO ANITA</td>
+        <td>SACABA</td>
+        <td>GES</td>
+        <td>10:24:38</td>
+        <td>10:51:16</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO SAN JORGE CBBA. S.R.L.</td>
+        <td>QUILLACOLLO</td>
+        <td>GES</td>
+        <td>10:21:28</td>
+        <td>11:25:49</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO SAN JORGE CBBA. S.R.L.</td>
+        <td>QUILLACOLLO</td>
+        <td>DOS</td>
+        <td>10:21:28</td>
+        <td>11:25:49</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO EQGAS S.R.L.</td>
+        <td>PUNATA</td>
+        <td>DOS</td>
+        <td>10:16:53</td>
+        <td>12:06:07</td>
+    </tr>
+    
+    <tr>
+        <td>INVERSIONES VALLE SUR S.A.</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>10:16:53</td>
+        <td>11:27:54</td>
+    </tr>
+    
+    <tr>
+        <td>CENTRO DE SERVICIO TIQUIPAYA</td>
+        <td>TIQUIPAYA</td>
+        <td>GES</td>
+        <td>10:13:11</td>
+        <td>10:13:11</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO COCHABAMBA S.R.L. SUCURSAL I</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>10:03:53</td>
+        <td>10:41:34</td>
+    </tr>
+    
+    <tr>
+        <td>COMPAÑIA COMERCIAL DE GAS COMPRIMIDO CGC SRL</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>09:59:36</td>
+        <td>11:16:49</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO LA MERCED S.R.L.</td>
+        <td>CAPINOTA</td>
+        <td>DOS</td>
+        <td>09:59:36</td>
+        <td>11:58:17</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO MIZQUE</td>
+        <td>MIZQUE</td>
+        <td>GES</td>
+        <td>09:56:34</td>
+        <td>15:40:03</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO MIZQUE</td>
+        <td>MIZQUE</td>
+        <td>DOS</td>
+        <td>09:56:34</td>
+        <td>15:40:03</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIOS SIPE SIPE S.R.L.</td>
+        <td>SIPE SIPE</td>
+        <td>GES</td>
+        <td>09:52:23</td>
+        <td>11:10:09</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIOS SIPE SIPE S.R.L.</td>
+        <td>SIPE SIPE</td>
+        <td>DOS</td>
+        <td>09:52:23</td>
+        <td>11:10:09</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO AYACUCHO</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>09:49:45</td>
+        <td>10:19:04</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO CHIMBOCO</td>
+        <td>SACABA</td>
+        <td>GES</td>
+        <td>09:49:45</td>
+        <td>10:25:26</td>
+    </tr>
+    
+    <tr>
+        <td>GASNOR SERVICIOS PETROLEROS S.R.L. GASNOR S.R.L.</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>09:43:47</td>
+        <td>09:58:32</td>
+    </tr>
+    
+    <tr>
+        <td>PETROGAS SERVICIOS PETROLEROS S.R.L.</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>09:43:47</td>
+        <td>10:10:31</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO PARAJE 24.7 S.R.L.</td>
+        <td>QUILLACOLLO</td>
+        <td>DOS</td>
+        <td>09:33:30</td>
+        <td>10:24:58</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO PARAJE 24.7 S.R.L.- SUCURSAL COCHABAMBA I</td>
+        <td>QUILLACOLLO</td>
+        <td>DOS</td>
+        <td>09:33:30</td>
+        <td>10:27:21</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACIÓN DE SERVICIO DORBIGNI</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>09:00:01</td>
+        <td>09:28:58</td>
+    </tr>
+    
+    <tr>
+        <td>PETROCEL S.R.L.</td>
+        <td>QUILLACOLLO</td>
+        <td>GES</td>
+        <td>09:00:01</td>
+        <td>10:02:39</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO 20 DE DICIEMBRE</td>
+        <td>QUILLACOLLO</td>
+        <td>GES</td>
+        <td>09:00:01</td>
+        <td>09:59:52</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACIÓN DE SERVICIO IQUIRCOLLO S.R.L.</td>
+        <td>QUILLACOLLO</td>
+        <td>GES</td>
+        <td>08:54:22</td>
+        <td>09:50:21</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO IQUIRCOLLO S.R.L. SUCURSAL</td>
+        <td>QUILLACOLLO</td>
+        <td>GES</td>
+        <td>08:54:22</td>
+        <td>09:58:07</td>
+    </tr>
+    
+    <tr>
+        <td>TERMINAL DE BUSES COCHABAMBA S.A.</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>08:42:35</td>
+        <td>09:04:31</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO SEÑOR SANTIAGO</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>08:42:35</td>
+        <td>08:53:02</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO ARANJUEZ</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>08:42:35</td>
+        <td>09:14:22</td>
+    </tr>
+    
+    <tr>
+        <td>PETROGAS SERVICIOS PETROLEROS S.R.L.</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>08:37:55</td>
+        <td>09:04:39</td>
+    </tr>
+    
+    <tr>
+        <td>GASNOR SERVICIOS PETROLEROS S.R.L. GASNOR S.R.L.</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>08:37:55</td>
+        <td>08:52:40</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO COCHABAMBA S.R.L. SUCURSAL II</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>08:31:33</td>
+        <td>09:15:16</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO TRANS SACABA S.A.II</td>
+        <td>SACABA</td>
+        <td>GES</td>
+        <td>08:31:33</td>
+        <td>09:18:18</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO COCHABAMBA S.R.L. SUCURSAL I</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>08:08:37</td>
+        <td>08:46:18</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO CAPITAN VICTOR USTARIZ</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>08:08:37</td>
+        <td>08:44:08</td>
+    </tr>
+    
+    <tr>
+        <td>AUTOMOVIL CLUB BOLIVIANO FILIAL COCHABAMBA - UNIDAD CARBURANTES S.R.L.</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>08:03:39</td>
+        <td>08:32:14</td>
+    </tr>
+    
+    <tr>
+        <td>CALA CALA</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>07:27:35</td>
+        <td>08:05:01</td>
+    </tr>
+    
+    <tr>
+        <td>CALA CALA</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>07:27:35</td>
+        <td>08:05:01</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO PAROTANI S.R.L.</td>
+        <td>SIPE SIPE</td>
+        <td>DOS</td>
+        <td>07:23:30</td>
+        <td>08:53:42</td>
+    </tr>
+    
+    <tr>
+        <td>COMPAÑIA COMERCIAL DE GAS COMPRIMIDO CGC SRL</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>07:19:38</td>
+        <td>08:36:51</td>
+    </tr>
+    
+    <tr>
+        <td>CENTRO DE SERVICIO PORTALEZ SRL</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>07:19:38</td>
+        <td>07:51:15</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO EPIZANA</td>
+        <td>TOTORA</td>
+        <td>DOS</td>
+        <td>07:11:24</td>
+        <td>12:45:51</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO DAYANA</td>
+        <td>TOLATA</td>
+        <td>DOS</td>
+        <td>07:11:24</td>
+        <td>07:53:33</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO PARAJE 24.7 S.R.L.- SUCURSAL COCHABAMBA I</td>
+        <td>QUILLACOLLO</td>
+        <td>GES</td>
+        <td>07:06:43</td>
+        <td>08:00:34</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO PARAJE 24.7 S.R.L.</td>
+        <td>QUILLACOLLO</td>
+        <td>GES</td>
+        <td>07:06:43</td>
+        <td>07:58:11</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO LOS ALAMOS</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>06:51:43</td>
+        <td>07:24:12</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO OMEREQUE</td>
+        <td>OMEREQUE</td>
+        <td>GES</td>
+        <td>06:45:27</td>
+        <td>15:44:44</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO OMEREQUE</td>
+        <td>OMEREQUE</td>
+        <td>DOS</td>
+        <td>06:45:27</td>
+        <td>15:44:44</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO SEÑOR SANTIAGO</td>
+        <td>COCHABAMBA</td>
+        <td>DOS</td>
+        <td>06:40:54</td>
+        <td>06:51:21</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACIÓN DE SERVICIO LAS PALMERAS S.R.L.</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>06:36:50</td>
+        <td>07:03:47</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO REFINERIA</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>06:36:50</td>
+        <td>06:38:10</td>
+    </tr>
+    
+    <tr>
+        <td>SURTIDOR NISSAN</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>06:36:50</td>
+        <td>06:52:33</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO LOS ALAMOS</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>06:32:09</td>
+        <td>07:04:38</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACIÓN DE SERVICIO AEROPUERTO SRL.</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>06:27:10</td>
+        <td>06:51:08</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO SANTA MONICA S.R.L.</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>06:27:10</td>
+        <td>07:04:31</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO DAYANA</td>
+        <td>TOLATA</td>
+        <td>GES</td>
+        <td>06:15:55</td>
+        <td>06:58:04</td>
+    </tr>
+    
+    <tr>
+        <td>COMERCIALIZADORA "QK" S.R.L.</td>
+        <td>SACABA</td>
+        <td>GES</td>
+        <td>06:13:42</td>
+        <td>06:40:41</td>
+    </tr>
+    
+    <tr>
+        <td>EL MANANTIAL CENTRO DE SERVICIOS Y COMERCIO S.R.L. SUC II</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>06:12:24</td>
+        <td>06:40:08</td>
+    </tr>
+    
+    <tr>
+        <td>EL MANANTIAL CENTRO DE SERVICIOS Y COMERCIO S.R.L.</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>06:12:24</td>
+        <td>06:30:51</td>
+    </tr>
+    
+    <tr>
+        <td>SURTIDOR EL CRISTO</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>06:09:23</td>
+        <td>06:40:41</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO LORETO S.R.L.- SUCURSAL COCHABAMBA I</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>06:07:45</td>
+        <td>06:22:10</td>
+    </tr>
+    
+    <tr>
+        <td>ISABEL CHAVEZ</td>
+        <td>PUNATA</td>
+        <td>GES</td>
+        <td>06:07:45</td>
+        <td>06:18:58</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO CIRCUITO BOLIVIA S.A.</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>05:58:01</td>
+        <td>06:16:37</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO PANAMERICANA SUCURSAL COCHABAMBA</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>05:58:01</td>
+        <td>06:31:40</td>
+    </tr>
+    
+    <tr>
+        <td>AMERICA</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>05:55:39</td>
+        <td>06:30:58</td>
+    </tr>
+    
+    <tr>
+        <td>VALLE HERMOSO</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>05:55:39</td>
+        <td>06:00:36</td>
+    </tr>
+    
+    <tr>
+        <td>LOS LAURELES</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>05:51:31</td>
+        <td>06:26:33</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO SEÑOR SANTIAGO SUCURSAL 1</td>
+        <td>COCHABAMBA</td>
+        <td>GES</td>
+        <td>05:51:31</td>
+        <td>06:30:34</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO MONTERREY S.R.L.</td>
+        <td>COLCAPIRHUA</td>
+        <td>GES</td>
+        <td>05:50:15</td>
+        <td>06:31:28</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO ITAPAYA</td>
+        <td>SIPE SIPE</td>
+        <td>GES</td>
+        <td>05:47:24</td>
+        <td>07:20:36</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO ITAPAYA</td>
+        <td>SIPE SIPE</td>
+        <td>DOS</td>
+        <td>05:47:24</td>
+        <td>07:20:36</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO TIRAQUE</td>
+        <td>TIRAQUE</td>
+        <td>GES</td>
+        <td>05:41:37</td>
+        <td>08:09:03</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO TIRAQUE</td>
+        <td>TIRAQUE</td>
+        <td>DOS</td>
+        <td>05:41:37</td>
+        <td>08:09:03</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO CHULLPANI</td>
+        <td>COLOMI</td>
+        <td>GES</td>
+        <td>05:38:08</td>
+        <td>07:25:49</td>
+    </tr>
+    
+    <tr>
+        <td>ESTACION DE SERVICIO CHULLPANI</td>
+        <td>COLOMI</td>
+        <td>DOS</td>
+        <td>05:38:08</td>
+        <td>07:25:49</td>
+    </tr>
+    
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="footer">
+            <p>Generado el 30/05/2025 23:51:20 | © 2025 Sistema de Transportes</p>
+        </div>
+    </div>
+
+    <script>
+        // Funcionalidad de búsqueda general
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const table = document.getElementById('transportes-table');
+            const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+            
+            for (let row of rows) {
+                const cells = row.getElementsByTagName('td');
+                let found = false;
+                
+                for (let cell of cells) {
+                    if (cell.textContent.toLowerCase().includes(searchTerm)) {
+                        found = true;
+                        break;
+                    }
+                }
+                
+                row.style.display = found ? '' : 'none';
+            }
+        });
+        
+        // Funcionalidad de ordenamiento
+        document.querySelectorAll('th').forEach(header => {
+            header.addEventListener('click', function() {
+                const table = document.getElementById('transportes-table');
+                const tbody = table.querySelector('tbody');
+                const rows = Array.from(tbody.querySelectorAll('tr:not([style*="display: none"])'));
+                const columnIndex = Array.from(this.parentElement.children).indexOf(this);
+                const isAscending = this.classList.contains('asc');
+                
+                // Resetear otros encabezados
+                document.querySelectorAll('th').forEach(th => {
+                    if (th !== this) {
+                        th.classList.remove('asc', 'desc');
+                    }
+                });
+                
+                // Ordenar filas
+                rows.sort((a, b) => {
+                    const aValue = a.children[columnIndex].textContent.trim();
+                    const bValue = b.children[columnIndex].textContent.trim();
+                    
+                    // Intenta convertir a número si es posible
+                    const aNum = parseFloat(aValue.replace(',', '.'));
+                    const bNum = parseFloat(bValue.replace(',', '.'));
+                    
+                    if (!isNaN(aNum) && !isNaN(bNum)) {
+                        return isAscending ? aNum - bNum : bNum - aNum;
+                    }
+                    
+                    // Manejo especial para horas (formato HH:MM:SS)
+                    if (aValue.match(/^\d{2}:\d{2}:\d{2}$/) && bValue.match(/^\d{2}:\d{2}:\d{2}$/)) {
+                        const aTime = aValue.split(':').reduce((acc, val, i) => acc + parseInt(val) * Math.pow(60, 2-i), 0);
+                        const bTime = bValue.split(':').reduce((acc, val, i) => acc + parseInt(val) * Math.pow(60, 2-i), 0);
+                        return isAscending ? aTime - bTime : bTime - aTime;
+                    }
+                    
+                    // Orden alfabético
+                    return isAscending 
+                        ? aValue.localeCompare(bValue) 
+                        : bValue.localeCompare(aValue);
+                });
+                
+                // Actualizar tabla
+                rows.forEach(row => tbody.appendChild(row));
+                
+                // Actualizar indicador de ordenamiento
+                this.classList.toggle('asc', !isAscending);
+                this.classList.toggle('desc', isAscending);
+            });
+        });
+    </script>
+</body>
+</html>
