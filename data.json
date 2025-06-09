@@ -1,0 +1,173 @@
+{
+  "updated_datetime": "08/06/2025 22:06:15",
+  "stations": [
+    {
+      "station": "SURTIDOR NISSAN",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "12:49:55",
+      "end_time": "13:05:38"
+    },
+    {
+      "station": "ESTACIÓN DE SERVICIO LAS PALMERAS S.R.L.",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "12:49:55",
+      "end_time": "13:16:52"
+    },
+    {
+      "station": "CENTRO DE SERVICIO PORTALEZ SRL",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "12:36:17",
+      "end_time": "13:07:54"
+    },
+    {
+      "station": "ESTACION DE SERVICIO COCHABAMBA S.R.L. SUCURSAL I",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "12:28:21",
+      "end_time": "13:06:02"
+    },
+    {
+      "station": "AMERICA",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "12:21:25",
+      "end_time": "12:56:44"
+    },
+    {
+      "station": "VALLE HERMOSO",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "12:21:25",
+      "end_time": "12:26:22"
+    },
+    {
+      "station": "GUADELOUPE GROUP S.R.L.",
+      "location": "SACABA",
+      "type": "GES",
+      "start_time": "12:19:20",
+      "end_time": "12:49:50"
+    },
+    {
+      "station": "AUTOMOVIL CLUB BOLIVIANO FILIAL COCHABAMBA - UNIDAD CARBURANTES S.R.L.",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "12:00:32",
+      "end_time": "12:29:07"
+    },
+    {
+      "station": "ESTACIÓN DE SERVICIO DORBIGNI",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "11:59:09",
+      "end_time": "12:28:06"
+    },
+    {
+      "station": "ESTACION DE SERVICIO COCHABAMBA S.R.L. SUCURSAL II",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "11:59:09",
+      "end_time": "12:42:52"
+    },
+    {
+      "station": "ESTACION DE SERVICIO REFINERIA",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "11:48:24",
+      "end_time": "11:49:44"
+    },
+    {
+      "station": "ESTACION DE SERVICIO RIOJA",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "11:36:39",
+      "end_time": "11:41:57"
+    },
+    {
+      "station": "ESTACION DE SERVICIO BEIJING S.R.L.",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "11:36:39",
+      "end_time": "12:08:30"
+    },
+    {
+      "station": "ESTACION DE SERVICIO LOS ALAMOS",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "11:30:29",
+      "end_time": "12:02:58"
+    },
+    {
+      "station": "ESTACION DE SERVICIO DELAASUNCION-AMERICA S.R.L.",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "11:27:49",
+      "end_time": "12:02:08"
+    },
+    {
+      "station": "SURTIDOR EL CRISTO",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "11:15:59",
+      "end_time": "11:47:17"
+    },
+    {
+      "station": "EL MANANTIAL CENTRO DE SERVICIOS Y COMERCIO S.R.L. SUC II",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "11:15:59",
+      "end_time": "11:43:43"
+    },
+    {
+      "station": "ESTACION DE SERVICIO ARANJUEZ",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "11:01:27",
+      "end_time": "11:33:14"
+    },
+    {
+      "station": "EL MANANTIAL CENTRO DE SERVICIOS Y COMERCIO S.R.L. SUC I",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "11:00:24",
+      "end_time": "11:42:20"
+    },
+    {
+      "station": "EL MANANTIAL CENTRO DE SERVICIOS Y COMERCIO S.R.L.",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "11:00:24",
+      "end_time": "11:18:51"
+    },
+    {
+      "station": "ESTACION DE SERVICIO PANAMERICANA SUCURSAL COCHABAMBA",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "10:49:57",
+      "end_time": "11:23:36"
+    },
+    {
+      "station": "ESTACION DE SERVICIO CIRCUITO BOLIVIA S.A.",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "10:49:57",
+      "end_time": "11:08:33"
+    },
+    {
+      "station": "ESTACION DE SERVICIO SAN JUAN BAUTISTA S.R.L.",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "10:41:17",
+      "end_time": "10:52:21"
+    },
+    {
+      "station": "CALA CALA",
+      "location": "COCHABAMBA",
+      "type": "GES",
+      "start_time": "10:36:50",
+      "end_time": "11:14:16"
+    }
+  ]
+}
